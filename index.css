@@ -1,0 +1,961 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Raleway', sans-serif;
+    
+}
+html {
+    scroll-behavior: smooth;
+}
+nav {
+    position: fixed;
+    padding: 30px 7%;
+    justify-content: space-between;
+    align-items: center;
+    height: 6em;
+    width: 100%;
+    display: flex;
+    z-index: 10;
+    transition: 0.1s ease-in-out;
+}
+.nav-active {
+    background-color: rgb(255, 255, 255, 0.4);
+    backdrop-filter: blur(15px);
+}
+.nav-active h1 {
+    color: black;
+}
+.nav-active a {
+    color: black;
+}
+.menu-icon {
+    display: none;
+    width: 25px;
+    height: 3px;
+    background-color: #fff;
+    transform: translateY(-50%);
+    transition: 0.5s;
+    border-radius: 5px;
+    cursor: pointer;   
+}
+.menu-icon::before
+ {
+    content: '';
+    position: absolute;
+    width: 25px;
+    height: 3px;
+    background: black;
+    transition: 0.5s;
+    border-radius: 5px;
+}
+.menu-icon::after {
+    content: '';
+    position: absolute;
+    width: 25px;
+    height: 3px;
+    background: black;
+    transition: 0.5s;
+    border-radius: 5px;
+}
+.nenu-icon::before {
+    top: -10px;
+}
+.menu-icon::after {
+    bottom: 10px;
+}
+.menu-icon.active {
+    background-color: white;
+}
+.menu-icon.active::before {
+    top: 0;
+    transform: rotate(45deg);
+}
+.menu-icon.active::after {
+    top: 0;
+    transform: rotate(135deg);
+} 
+li {
+    list-style: none;
+    margin: 0 20px;
+}
+nav ul {
+    display: flex;
+}
+nav a {
+    text-decoration: none;
+    color: #BDACB0;
+    font-size: 18px;
+    font-weight: 400;
+    transition: ease-in 0.2s;
+}
+nav a:hover {
+    padding: 10px 15px;
+    color: white;
+    background-color: #2DBDBD;
+    border-radius: 20px;
+}
+.intro {
+    width: 100%;
+    height: auto;
+    padding-bottom: 10em;
+    padding-left: 7%;
+    padding-top: 12em;
+}
+.intro h1 {
+    color: #403E3F;
+    font-size: 80px;
+    line-height: 96px;
+    font-weight: 400;
+    padding: 5px 0px;
+}
+.intro p {
+    padding-top: 10px;
+    color: #A39598;
+    font-size: 20px;
+    line-height: 28px;
+    font-weight: 400;
+    padding-bottom: 30px;
+}
+button {
+    width: 136px;
+    height: 56px;
+    border-radius: 40px;
+    color: white;
+    background: #403E3F;
+    font-size: 17px;
+}
+button:hover {
+    background-color: #2DBDBD;
+    border: 1px solid transparent;
+}
+.img {
+    width: 100%;
+    height: 100vh;
+}
+.impressions {
+    height: auto;
+    padding: 7em 5%;
+    display: flex;
+    justify-content: space-between;
+}
+.imps {
+    display: flex;
+}
+.imps h2 {
+    margin-right: 20px;
+    font-size: 64px;
+    font-weight: 400;
+    line-height: 86px;
+
+
+}
+.imps p {
+    padding-top: 10px;
+    color: #B0A2A5;
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 32px;
+    width: 80px;
+}
+.what-we-do {
+    height: auto;
+    background-color: #262424;
+    padding: 10em 7%;
+}
+.what-we-do h1 {
+    color: #C9B9BD;
+    width: 150px;
+    font-size: 2.5em;
+    padding-bottom: 50px;
+}
+.img-container {
+    display: flex;
+    padding-top: 40px;
+    justify-content: space-evenly;
+}
+.img-container h3 {
+    color: #E3D5D9;
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 36px;
+    letter-spacing: 0em;
+    
+}
+.imgs img {
+    width: 97%;
+    height: 100%;
+    transition: transform .5s;
+}
+.imgs img:hover {
+    transform: scale(0.95);
+}
+.imgs h3 {
+    padding-top: 20px;
+}
+.selected-projects {
+    padding: 5.5em 7%;
+    background-color: #FAF5F6;
+}
+.selected-pro {
+    display: flex;
+    justify-content: space-between;
+    padding-bottom: 120px;
+    padding-top: 50px;
+}
+.selected-pro h1 {
+    width: 300px;
+    color: #403E3F;
+    font-size: 48px;
+    font-weight: 400;
+    line-height: 64px;
+    letter-spacing: 0em;
+    font-size: 2.5em;
+}
+.project-container {
+    display: grid;
+    grid-template-columns: auto auto auto;
+    padding: 0 -3%;
+    gap: 20px;
+    max-width: 1440px;
+}
+.projects {
+    padding: 10px 15px 20px 15px;
+    background-color: #ffffff;
+}
+.projects img {
+    width: 100%;
+    transition: transform 0.5s;
+}
+.projects img:hover {
+    transform: scale(0.95);
+}
+.projects h2 {
+    padding-top: 15px;
+    padding-bottom: 10px;
+    font-size: 30px;
+    font-weight: 400;
+    line-height: 43px;
+    letter-spacing: 0em;
+    color: #403E3F;
+}
+.alt-text {
+    display: flex;
+    gap: 10px;
+    padding-bottom: 20px;
+}
+.alt-text p {
+    width: auto;
+    height: auto;
+    border-radius: 4em;
+    padding: 10px;
+    background-color: #FAF5F6;
+}
+.description {
+    padding: 8em 5%;
+}
+.description h1 {
+    padding-bottom: 70px;
+    width: 300px;
+    font-size: 48px;
+    font-weight: 400;
+    line-height: 64px;
+    letter-spacing: 0em;
+    color: #403E3F;
+}
+.desc-1 {
+    width: auto;
+    padding: 20px;
+    margin: 10px;
+    border-radius: 10px;
+    background-color: #eeeeee;
+}
+.desc-3 {
+    width: auto;
+    padding: 20px;
+    margin: 10px;
+    border-radius: 10px;
+    background-color: #eeeeee;
+}
+.desc-3 .head {
+    display: flex;
+    width: auto;
+    height: auto;
+    padding: 3px;
+    gap: 20px;
+    justify-content: center;
+    align-items: center;
+    border-radius: 2em;
+    background-color: #ffffff;
+    font-size: 0.7em;
+    font-weight: lighter;
+}
+.bx {
+    font-size: 2em;
+    transform: rotate(-45deg);
+}
+.desc-3 p {
+    font-size: 18px;
+    font-weight: 500;
+    line-height: 40px;
+    letter-spacing: 0em;  
+    color: #403E3F;
+    padding: 30px 0;
+    font-weight: 600;
+    line-height: 40px;
+}
+.desc-3 h3 {
+    color: #2DBDBD;
+    font-size: 1.5em;
+}
+.desc-1 .head {
+    display: flex;
+    width: auto;
+    height: auto;
+    padding: 3px;
+    gap: 20px;
+    justify-content: center;
+    align-items: center;
+    border-radius: 2em;
+    background-color: white;
+    font-size: 0.6em;
+    font-weight: lighter;
+}
+.desc-1 p {
+    font-size: 18px;
+    font-weight: 500;
+    line-height: 40px;
+    letter-spacing: 0em;  
+    color: #403E3F;
+    padding: 30px 0;
+    font-weight: 600;
+    line-height: 40px;
+}
+.desc-1 h3 {
+    color: #2DBDBD;
+    font-size: 1.5em;
+}
+.desc-1:nth-child(2) {
+    background-color: white;
+}
+ 
+.desc-container {
+    display: flex;
+    gap: 10px;
+}
+.desc-2 {
+    background-color: #333333;
+    margin-top: 10px;
+    padding-top: 10px;
+    border-radius: 10px;
+    height: auto;
+}
+.head-1 {
+    display: flex;
+    width: 40%;
+    height: auto;
+    padding: 3px;
+    justify-content: space-around;
+    border-radius: 2em;
+    background-color: white;
+    font-size: 0.7em;
+    margin: 20px;
+    font-weight: lighter;
+}
+.desc-2 p {
+    padding: 18px;
+    color: white;
+    line-height: 40px;
+    font-size: 1.2em;
+}
+.desc-2 h3 {
+    color: white;
+    font-size: 1.5em;
+    padding: 20px;
+}
+.description-container-2 {
+    display: flex;
+}
+.design-page {
+    padding: 5.5em 7%;
+    background-color: #eeeeee;
+}
+.design-page h1 {
+    font-size: 2.5em;
+    width: 200px;
+    padding-top: 100px;
+    padding-bottom: 20px;
+}
+.design-page h2 {
+    font-size: 1.2em;
+    line-height: 1.2;
+    font-weight: lighter;
+    width: 500px;
+}
+.design-step-1 {
+    height: 78vh;
+    margin: 80px 0;
+    overflow: hidden;
+    padding-left: 5%;
+    z-index: 1;
+    position: relative;
+    transition: transform 0.5s;
+}
+.design-step-1 img:hover {
+    transform: scale(1.1);
+}
+.design-step-1 img {
+   position: absolute;
+   top: 0;
+   left: 0;
+   right: 0;
+   bottom: 0;
+   transform: scale(1);
+   z-index: -1;
+   width: 100%;
+   transition: .3s ease-in;
+   height: 100%;
+}
+.design-step-1 h4 {
+    padding-top: 80px;
+    color: #FAF5F6;    
+    font-size: 16px;
+}
+.design-step-1 h5 {
+    padding-top: 10px;
+    color: #FAF5F6;
+    font-size: 32px;
+}
+.design-step-1 p {
+    padding-top: 100px;
+    line-height: 40px;
+    width: 44%;
+    color: #ffffff;
+    font-size: 18px;
+}
+.design-step-1 h6 {
+    font-size: 18px;
+    line-height: 24.3px;
+    color: #FAF5F6;
+    padding-top: 20px;
+}
+.footer {
+    background-color: #262424;
+    padding: 50px 8%;
+}
+.footer h1 {
+    padding-top: 100px;
+    color: #D6C7CB;
+    font-size: 60px;
+    font-weight: 400;
+    line-height: 96px;
+    letter-spacing: 0em;
+    width: 65%;
+}
+.footer h4 {
+    color: #FAF5F6;
+    font-size: 18px;
+    font-weight: 600;
+    line-height: 24px;
+    padding-top: 10px;
+    letter-spacing: 0em;
+}
+.footer-container {
+    display: flex;
+    gap: 160px;
+    margin-top: 150px;
+}
+.first-cont h2 {  
+    font-size: 28px;
+    font-weight: 600;
+    line-height: 49px;
+    letter-spacing: 0em;
+    color: #F0E9EA;
+    padding-bottom: 30px;
+}
+.first-cont p {
+    font-size: 16px;
+    font-weight: 200;
+    line-height: 28px;
+    letter-spacing: 0em;
+    color: #F0E9EA;
+    padding-bottom: 10px;
+    transition: ease-in 0.3s transform;
+}
+.first-cont p:hover {
+    transform: translateY(-10px);
+}
+
+@media only screen and (min-width: 345px) and (max-width: 480px) {
+    nav a {
+        color: #000;
+    }
+    nav ul {
+        position: fixed;
+        top: 50px;
+        left: 100%;
+        width: 100%;
+        height: 50vh;
+        z-index: 10;
+       background-color: white;
+        flex-direction: column;
+        transition: 0.5s ease-in;
+        justify-content: center;
+        align-items: center;
+        gap: 2.5rem;
+    }
+    ul.active {
+        left: 0;
+        transition: 0.5s ease-in;
+    }
+    .menu-icon {
+        display: block;
+    }
+    nav {
+        height: 5em;
+        padding: 10px 4%;
+    }
+    button {
+        width: 120px;
+        font-size: 14px;
+        height: 48px;
+    }
+    .intro {
+        height: auto;
+        display: flex;
+        flex-direction: column;
+        padding: 100px 4%;
+        align-items: left;
+    }
+    .intro h1 {
+        font-size: 35px;
+        line-height: 1.3;
+        padding: 0;
+        text-align: left;
+    }
+    .intro p {
+        text-align: left;
+    }
+    .impressions {
+        display: grid;
+        grid-template-columns: auto auto;
+    }
+    .imps h2 {
+        font-size: 48px;
+        line-height: 60px;
+    }
+    .imps p {
+        font-size: 14px;
+        font-weight: 400;
+        line-height: 26px;
+        width: 70px;
+    }
+    .img-container {
+        display: block;
+    }
+    .what-we-do {
+        height: auto;
+        padding: 5em 4%;
+    }
+    .what-we-do h1 {
+        padding-bottom: 30px;
+    }
+    .imgs h3 {
+        padding-bottom: 30px;
+    }
+    .selected-projects {
+        padding: 5em 4%;
+    }
+    .selected-pro {
+        padding: 40px 0;
+    }
+    .selected-pro h1 {
+        width: 200px;
+        font-size: 36px;
+        line-height: 1.3;
+    }
+    .projects {
+        margin-bottom: 30px;
+    }
+    .project-container {
+        display: block;
+    }   
+    .alt-text p {
+        font-size: 0.8em;
+    }
+    .description {
+        height: auto;
+        padding: 5em 5%;
+    }
+    .description h1 {
+        width: 280px;
+        font-size: 38px;
+        padding-bottom: 40px;
+        line-height: 1.3;
+    }
+   
+    .desc-container {
+        display: block;
+    }
+    .description-container-2 {
+        display: block;
+        margin-top: 20px;
+    }
+    .head-1 {
+        width: auto;
+        padding: 10px;
+        font-size: 0.6em;
+    }
+    .desc-1 {
+        width: 100%;
+        margin: 0 auto;
+    }
+    .desc-3 {
+        width: 100%;
+        margin: 20px auto;
+    }
+    .design-page {
+       height: auto;
+       padding: 5em 5%;
+    }
+    .design-page h1 {
+        font-size: 2em;
+        width: 160px;
+        padding: 20px 0;
+    }
+    .design-page h2 {
+        font-size: 1.1em;
+        width: 300px;
+        line-height: 1.3;
+    }
+    .design-step-1 {
+        height: auto;
+        margin: 40px 0px;
+    }
+    .design-step-1 h4 {
+        font-size: 15px;
+    }
+    .design-step-1 h5 {
+        font-size: 26px;
+    }
+    .design-step-1 p {
+        line-height: 1.4;
+        width: 80%;
+        padding-top: 40px;
+    }
+    .design-step-1 img {
+        object-fit: cover;
+        filter: brightness(90%);
+    }
+    .design-step-1 h6 {
+        font-size: 16px;
+        padding-bottom: 40px;
+        line-height: 20px;
+    }
+    .footer {
+        padding: 5em 5%;
+    }
+    .footer h1{
+        font-size: 2em;
+        line-height: 1.3;
+        width: 80%;
+        padding-top: 0px;
+    }
+    .footer-container {
+        display: flex;
+        flex-direction: column;
+        gap: 40px;
+        margin-top: 40px;
+    }
+    .first-cont h2{
+        font-size: 22px;
+    }
+}
+
+
+@media only screen and (min-width: 481px) and (max-width: 767px) {
+    nav a {
+        color: #000;
+    }
+    nav ul {
+        position: fixed;
+        top: 50px;
+        left: 100%;
+        width: 100%;
+        height: 50vh;
+        z-index: 10;
+       background-color: white;
+        flex-direction: column;
+        transition: 0.5s ease-in;
+        justify-content: center;
+        align-items: center;
+        gap: 2.5rem;
+    }
+    ul.active {
+        left: 0;
+        transition: 0.5s ease-in;
+    }
+    .menu-icon {
+        display: block;
+    }
+    nav {
+        height: 5em;
+        padding: 10px 7%;
+    }
+    button {
+        width: 120px;
+        font-size: 14px;
+        height: 48px;
+    }
+    .intro {
+        height: auto;
+        padding: 100px 7%;
+    }
+    .intro h1 {
+        font-size: 50px;
+        line-height: 60px;
+    }
+    .impressions {
+        display: grid;
+        grid-template-columns: auto auto;
+    }
+    .imps h2 {
+        font-size: 48px;
+        line-height: 60px;
+    }
+    .imps p {
+        font-size: 14px;
+        font-weight: 400;
+        line-height: 26px;
+        width: 70px;
+    }
+    .img-container {
+        display: block;
+    }
+    .what-we-do {
+        height: auto;
+        padding-bottom: 100px;
+    }
+    .imgs h3 {
+        padding-bottom: 30px;
+    }
+    .selected-pro h1 {
+        width: 200px;
+        font-size: 36px;
+        line-height: 32px;
+    }
+    .projects {
+        margin-bottom: 30px;
+    }
+    .project-container {
+        display: block;
+    }   
+    .description {
+        height: auto;
+        padding-bottom: 70px;
+    }
+    .description h1 {
+        width: 280px;
+        font-size: 38px;
+    }
+   
+    .desc-container {
+        display: block;
+    }
+    .description-container-2 {
+        display: block;
+        margin-top: 20px;
+    }
+    .head-1 {
+        width: 60%;
+        padding: 10px;
+    }
+    .desc-1 {
+        width: auto;
+    }
+    .desc-3 {
+        width: auto;
+    }
+    .design-page {
+       height: auto;
+       padding-bottom: 70px;
+    }
+    .design-page h1 {
+        font-size: 2em;
+        width: 160px;
+    }
+    .design-page h2 {
+        font-size: 1.1em;
+        width: 300px;
+    }
+    .design-step-1 {
+        height: auto;
+    }
+    .design-step-1 h4 {
+        font-size: 15px;
+    }
+    .design-step-1 h5 {
+        font-size: 26px;
+    }
+    .design-step-1 p {
+        line-height: 32px;
+        width: 80%;
+    }
+    .design-step-1 h6 {
+        font-size: 16px;
+        padding-bottom: 40px;
+        line-height: 20px;
+    }
+    .footer-container {
+        display: grid;
+        grid-template-columns: auto auto;
+        gap: 120px;
+    }
+    .first-cont h2{
+        font-size: 22px;
+    }
+} 
+@media only screen and (min-width: 768px) and (max-width: 1024px) {
+    nav a {
+        color: #000;
+    }
+    nav ul {
+        position: fixed;
+        top: 50px;
+        left: 100%;
+        width: 100%;
+        height: 50vh;
+        z-index: 10;
+       background-color: white;
+        flex-direction: column;
+        transition: 0.5s ease-in;
+        justify-content: center;
+        align-items: center;
+        gap: 2.5rem;
+    }
+    ul.active {
+        left: 0;
+        transition: 0.5s ease-in;
+    }
+    .menu-icon {
+        display: block;
+    }
+    nav {
+        height: 5em;
+        padding: 10px 7%;
+    }
+    button {
+        width: 130px;
+        font-size: 18px;
+        height: 58px;
+    }
+    .intro {
+        height: auto;
+        padding: 100px 7%;
+    }
+    .intro h1 {
+        font-size: 50px;
+        line-height: 60px;
+    }
+    .impressions {
+        display: grid;
+        grid-template-columns: auto auto;
+    }
+    .imps h2 {
+        font-size: 98px;
+        line-height: 80px;
+    }
+    .imps p {
+        font-size: 28px;
+        font-weight: 400;
+        line-height: 26px;
+        width: 150px;
+    }
+    .img-container {
+        display: flex;
+        gap: 50px;
+    }
+    .what-we-do {
+        height: auto;
+        padding-bottom: 100px;
+    }
+    .imgs h3 {
+        padding-bottom: 30px;
+    }
+    .selected-pro h1 {
+        width: 200px;
+        font-size: 36px;
+        line-height: 32px;
+    }
+    .projects {
+        margin-bottom: 30px;
+    }
+    .project-container {
+        display: grid;
+        grid-template-columns: auto auto;
+    }   
+    .description {
+        height: auto;
+        padding-bottom: 70px;
+    }
+    .description h1 {
+        width: 280px;
+        font-size: 38px;
+    }
+   
+    .desc-container {
+        display: block;
+    }
+    .description-container-2 {
+        display: block;
+        margin-top: 20px;
+    }
+    .head-1 {
+        width: 100%;
+        padding: 10px;
+    }
+    .desc-1 {
+        width: 100%;
+    }
+    .desc-3 {
+        width: 100%;
+    }
+    .design-page {
+       height: auto;
+       padding-bottom: 70px;
+    }
+    .design-page h1 {
+        font-size: 2em;
+        width: 160px;
+    }
+    .design-page h2 {
+        font-size: 1.1em;
+        width: 300px;
+    }
+    .design-step-1 {
+        height: auto;
+    }
+    .design-step-1 h4 {
+        font-size: 15px;
+    }
+    .design-step-1 h5 {
+        font-size: 26px;
+    }
+    .design-step-1 p {
+        line-height: 32px;
+        width: 80%;
+    }
+    .design-step-1 h6 {
+        font-size: 16px;
+        padding-bottom: 40px;
+        line-height: 20px;
+    }
+    .footer-container {
+        display: grid;
+        grid-template-columns: auto auto;
+        gap: 120px;
+    }
+    .first-cont h2{
+        font-size: 22px;
+    }
+} 
